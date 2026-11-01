@@ -118,7 +118,7 @@ function App() {
             </div>
             <div className="hero-aside">
               <div className="portrait-panel">
-                <img className="profile-portrait" src="/resources/aditya-profile.png" alt="Aditya Sunkam — Java Full Stack Developer" />
+                <img className="profile-portrait" src="/resources/aditya-profile.webp" alt="Aditya Sunkam — Java Full Stack Developer" loading="eager" fetchPriority="high" decoding="async" />
               </div>
             </div>
           </div>
