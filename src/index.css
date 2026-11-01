@@ -169,3 +169,75 @@ footer button{border:0;background:none}footer small{color:#6f898e}
  .hero-meta { margin-top:20px; }
 }
 @media(max-width:390px) { .hero h1 { font-size:12.2vw; } }
+
+@keyframes motion-rise-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-copy > .eyebrow,
+.hero-copy > .hero-kicker,
+.hero-copy > h1,
+.hero-copy > .hero-bottom {
+  animation: motion-rise-in 650ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+.hero-copy > .hero-kicker { animation-delay: 80ms; }
+.hero-copy > h1 { animation-delay: 160ms; }
+.hero-copy > .hero-bottom { animation-delay: 240ms; }
+
+.nav-item,
+.project-repo-link,
+.contact-socials a,
+.footer-socials a,
+footer button {
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.project-repo-link:hover,
+.contact-socials a:hover,
+.footer-socials a:hover,
+footer button:hover {
+  transform: translateY(-2px);
+}
+
+.skill-card {
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.project-arrow a {
+  display: inline-flex;
+  transition: transform 200ms ease;
+}
+
+.project-row:hover .project-arrow a {
+  transform: translate(3px, -3px);
+}
+
+@supports (animation-timeline: view()) {
+  .intro-strip,
+  .section-heading,
+  .about-layout,
+  .about-facts,
+  .section-title-row,
+  .skill-grid,
+  .skill-note,
+  .project-list,
+  .project-disclaimer,
+  .education-inner,
+  .contact-content {
+    animation: motion-rise-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
